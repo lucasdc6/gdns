@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  gdns:
+    image: cosmtrek/air:v1.12.1
+    working_dir: /go/src/github.com/lucasdc6/gdns
+    network_mode: host
+    #ports:
+    #- 3000:3000
+    command:
+    - -c
+    - /etc/air.conf
+    volumes:
+    - ./config/air.conf:/etc/air.conf
+    - ..:/go/src/github.com/lucasdc6/gdns
